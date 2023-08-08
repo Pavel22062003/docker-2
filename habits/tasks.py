@@ -45,3 +45,4 @@ def check_task():
             if time_difference.total_seconds() >= 0 and time_difference.total_seconds() % interval.total_seconds() == 0:
                 message = f"Пора выполнить привычку: {habit.action}"
                 bot.send_message(user.tg_chat_id, message)
+

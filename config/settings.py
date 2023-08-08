@@ -22,7 +22,7 @@ load_dotenv(BASE_DIR / '.env')
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY ')
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -151,7 +151,7 @@ CELERY_TIMEZONE = 'UTC'
 CELERY_LOG_LEVEL = 'DEBUG'  # Установите уровень журнала на DEBUG
 CELERY_BEAT_SCHEDULE = {
     'check_task': {
-        'task': 'habits.tasks.test',  # Путь к задаче
+        'task': 'habits.tasks.check_task',  # Путь к задаче
         'schedule': timedelta(minutes=1),  # Расписание выполнения задачи (например, каждые 10 минут)
     },
 }
