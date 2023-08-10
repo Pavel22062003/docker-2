@@ -18,13 +18,16 @@ class Command(BaseCommand):
             try:
                 user_chat_id = User.objects.get(tg_chat_id=message.chat.id)
 
-                bot.send_message(message.chat.id, 'Привет, ваш телеграм уже подключен к сайту')
-
+                bot.send_message(user_chat_id,
+                                 'Привет, ваш телеграм уже подключен к сайту')
 
             except:
 
                 bot.send_message(message.chat.id,
-                                 'Привет, ваш телеграм ещё не подключен, для того чтобы получать привычки, пожалуйста отправьте ваш email , с которым вы регистрировались на сайте')
+                                 'Привет, ваш телеграм ещё не подключен, '
+                                 'для того чтобы получать привычки,'
+                                 'пожалуйста отправьте ваш email , '
+                                 'с которым вы регистрировались на сайте')
 
         @bot.message_handler(func=lambda message: True)
         def check(message):
@@ -35,6 +38,7 @@ class Command(BaseCommand):
 
                 bot.send_message(message.chat.id, 'Спасибо, ваш телеграм успешно подключён ')
             except:
+
                 bot.send_message(message.chat.id,
                                  'Что то пошло не так , пожалуйста проверьте корректность отправляемой почты')
 

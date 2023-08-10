@@ -25,13 +25,13 @@ def check_task():
 
             # Получить периодичность привычки
             frequency = habit.periodicity
-            # Определить интервал в зависимости от переодичности
+            # Определить интервал в зависимости от периодичности
             if frequency == '1':
                 interval = timedelta(days=1)
             elif frequency == '2':
-                interval = timedelta(weeks=1)
+                interval = timedelta(days=2)
             elif frequency == '3':
-                interval = timedelta(weeks=1)
+                interval = timedelta(days=3)
             else:
                 continue
 
@@ -45,4 +45,3 @@ def check_task():
             if time_difference.total_seconds() >= 0 and time_difference.total_seconds() % interval.total_seconds() == 0:
                 message = f"Пора выполнить привычку: {habit.action}"
                 bot.send_message(user.tg_chat_id, message)
-

@@ -6,7 +6,7 @@ from habits.validators import HabitValidator
 
 
 class HabitBaseSerializer(serializers.ModelSerializer):
-
+    validators = [HabitValidator()]
 
     class Meta:
         model = Habit
