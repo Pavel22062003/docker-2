@@ -29,3 +29,11 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+.idea
+
+celerybeat-schedule.bak
+
+celerybeat-schedule.dat
+
+celerybeat-schedule.dir
